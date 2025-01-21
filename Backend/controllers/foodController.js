@@ -1,11 +1,11 @@
-import foodModel from "../models/foodModel";
+import foodModel from "../models/foodModel.js";
 import fs from "fs"
 
 // add food item
 
 const addFood = async (req,res) => {
 
-    let image_fileName = `${req.image_fileName}`
+    let image_fileName = `${req.file.filename}`
 
     const food = new foodModel({
         name: req.body.name,
@@ -43,6 +43,7 @@ const listFood = async (req,res) => {
 const removeFood = async (req,res) => {
     try{
         const food = await foodModel.findById(req.body.id)
+        console.log(food)
         fs.unlink(`uploads/${food.image}`,() => {})
         await foodModel.findByIdAndDelete(req.body.id)
         res.json({success:true,message:"Food Removed"})
