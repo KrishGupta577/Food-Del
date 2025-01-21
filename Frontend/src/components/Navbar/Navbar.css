@@ -52,7 +52,7 @@
     position: relative;
 }
 
-navbar-search-icon .dot{
+.navbar-search-icon .dot{
     position: absolute;
     min-width: 10px;
     min-height: 10px;
