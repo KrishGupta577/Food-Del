@@ -1,0 +1,3 @@
+krishnagupta2022
+WbWbJKrFqGFwTHXA
+mongodb+srv://krishnagupta2022:WbWbJKrFqGFwTHXA@cluster0.7yy4s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
