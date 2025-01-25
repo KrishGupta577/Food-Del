@@ -10,7 +10,7 @@ const placeOrder = async (req,res) => {
         const newOrder = new orderModel({
             userId:req.body.userId,
             items:req.body.items,
-            amount:req.body.amount
+            amount:req.body.amount 
         })
     } catch (error) {
         
