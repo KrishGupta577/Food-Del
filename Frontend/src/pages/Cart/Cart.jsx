@@ -22,20 +22,22 @@ const Cart = () => {
         <br />
         <hr />
         {food_list.map((item, index) => {
-          if (cartItems[item._id] > 0) {
+          const itemQuantity = cartItems[item._id] ?? 0; // Default to 0 if undefined
+
+          if (itemQuantity > 0) {
             return (
               <div key={index}>
                 <div className="cart-items-title cart-items-item">
-                  <img src={url+"/images/"+item.image} alt="" />
+                  <img src={url + "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
-                  <p>{cartItems[item._id]}</p>
-                  <p>${item.price * cartItems[item._id]}</p>
+                  <p>{itemQuantity}</p>
+                  <p>${item.price * itemQuantity}</p>
                   <p onClick={() => removeFromCart(item._id)} className='cross'>X</p>
                 </div>
                 <hr />
               </div>
-            )
+            );
           }
         })}
       </div>
